@@ -8,151 +8,145 @@ export default function FreeGamePage() {
 
     return (
         <div className="FreeGamePage">
-            <div className="freegamepagetext">
                 <div className="title">
                     Free Game Page
                 </div>
                 <div className="container">
+                    {/* first row */}
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
-                </div>                  
-                <div className="container">
+
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
-                </div>                  
-                <div className="container">
+
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
-                </div>                  
-                <div className="container">
+
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
-                </div>                  
-                <div className="container">
+
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
-                </div>                  
-                <div className="container">
+
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
-                </div>                  
-                <div className="container">
+
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
-                </div>                  
-                <div className="container">
+
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
-                </div>                  
-                <div className="container">
+
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
-                </div>                  
-                <div className="container">
+
                     <div className="row">
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
-                    <div className="col"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
+                    <div className="col col-1"><Square/></div>
                     </div>
+
+
                 </div>                  
-            </div>
+                              
+           
 
 
 
