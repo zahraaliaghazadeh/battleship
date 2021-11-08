@@ -7,8 +7,8 @@ export default function NormalGamePage() {
         <div className="NormalGamePage">
             <section>
                 <div className="normalgamepagetext">
-                    <div className="">
-                        Normal Game Page
+                    <div className="title">
+                        <h3>Normal Game Page</h3>
                     </div>
                 </div>
             </section>
