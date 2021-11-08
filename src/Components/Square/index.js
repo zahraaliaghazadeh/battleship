@@ -6,11 +6,9 @@ import "./style.css";
 export default function Square() {
 
     return (
-
         <div>
             <div className="square">
             </div>
-           
         </div>
 
     );
