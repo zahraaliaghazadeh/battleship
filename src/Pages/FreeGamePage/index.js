@@ -9,7 +9,7 @@ export default function FreeGamePage() {
     return (
         <div className="FreeGamePage">
                 <div className="title">
-                    Free Game Page
+                <h3>Free Game Page</h3>
                 </div>
                 <div className="container">
                     {/* first row */}
