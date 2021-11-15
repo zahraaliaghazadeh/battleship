@@ -5,6 +5,9 @@ import NormalGamePage from "./Pages/NormalGamePage";
 import RulesPage from "./Pages/RulesPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
+// BETWEEN HERE AND THE } AFTER ROUTER, I COMMENTED OUT TO HELP ME GET THE GAMEBOARD
+
+
 
 // // importing components
 import Nav from "./Components/Nav"
@@ -46,7 +49,7 @@ function App() {
 
 // =============================================
 // ========Areal's links
-{/* <head>
+/* <head>
 <meta charset="utf-8"/>
 <!-- Bootstrap requires this meta tag -->
 <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
@@ -57,8 +60,8 @@ function App() {
 <!-- Custom stylesheet. Will override/add to styles in stylesheets loaded earlier-->        
 <link href="styles.css" rel="stylesheet"/>       
 <title>CS7580 Portfolio</title>
-</head> */}
-{/* ============= */ }
+</head> */
+/* ============= */ 
 
 // to use hooks /functional components instead of classes
 // import React,{useState,useEffect} from 'react';
@@ -70,7 +73,13 @@ function App() {
 
 
 
+// import Game from "./Components/Game";
 
+// function App() {
+//   return <Game />;
+// }
+
+// export default App;
 
 
 export default App;
