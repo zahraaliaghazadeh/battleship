@@ -1,0 +1,53 @@
+
+.square {
+    height: 40;
+    width: 40;
+    margin: 2px;
+    outline: 2px solid black;
+}
+
+/* if a ship square is hit */
+#lightGreenSquare {
+    background-color: lightgreen;
+    height: 40px;
+    width: 40px;
+}
+
+/* If a ship is sunk */
+#darkGreenSquare {
+    background-color: darkGreen;
+
+    height: 40px;
+    width: 40px;
+}
+
+/* If try to click again */
+#redSquare {
+    background-color: red;
+
+    height: 40px;
+    width: 40px;
+}
+/* default square color */
+#lightBlueSquare {
+    background-color: lightBlue;
+
+    height: 40px;
+    width: 40px;
+}
+
+/* if it is a miss */
+#darkBlueSquare {
+     background-color: darkBlue;
+
+    height: 40px;
+    width: 40px;
+}
+
+.blackBorder {
+    border: 1px solid black;
+}
+
+.whiteBorder {
+    border: 1px solid white;
+}
