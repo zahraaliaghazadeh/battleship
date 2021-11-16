@@ -1,10 +1,22 @@
 import React from "react";
-// import React, {useState} from "react";
+import {useState} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.css";
 // import { Link, useHistory } from "react-router-dom";
 
+
+
 export default function Nav() {
+
+  
+    const [showHamburgerContent, setShowHamburgerContent] = useState(false);
+    function toggleHamburger(){
+        if(showHamburgerContent==true){
+            setShowHamburgerContent(false);
+        }else{
+            setShowHamburgerContent(true);
+        }
+    }
 
     return (
         // TODO: Fix the collapsable hamburger menu
@@ -12,7 +24,7 @@ export default function Nav() {
         <div>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a className="navbar-brand logo" href="#">Battleship</a>
-                <button className="navbar-toggler hamburger" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button onClick={() => toggleHamburger()} className="navbar-toggler hamburger collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
