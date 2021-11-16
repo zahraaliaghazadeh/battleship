@@ -6,12 +6,11 @@ import "./style.css";
 
 export default function Nav() {
   const [showHamburgerContent, setShowHamburgerContent] = useState(false);
+
+  const show = (showHamburgerContent) ? "show" : "";
+
   function toggleHamburger() {
-    if (showHamburgerContent == true) {
-      setShowHamburgerContent(false);
-    } else {
-      setShowHamburgerContent(true);
-    }
+    setShowHamburgerContent(!showHamburgerContent);
   }
 
   return (
@@ -34,7 +33,7 @@ export default function Nav() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className={"collapse navbar-collapse " + show} id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <a className="nav-link sr-only" href="/">
