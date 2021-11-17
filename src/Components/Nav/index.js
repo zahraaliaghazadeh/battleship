@@ -14,7 +14,7 @@ export default function Nav() {
   }
 
   return (
-
+    // TODO: Fix the collapsable hamburger menu
 
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
