@@ -4,7 +4,7 @@
 // import Square from '../../Square.jsx'
 // import "./style.css"
 // import {useSelector} from 'react-redux'
-import Board from '../../Components/Board.js'
+import Board from '../../Components/Board/Board'
 import Game from '../../Components/Game.js'
 
 function FreeGamePage() {
