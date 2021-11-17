@@ -1,4 +1,4 @@
-export const shipTypes = [
+export const ShipTypes = [
     {
       id: 1,
       name: 'Carrier',
@@ -44,4 +44,5 @@ export const shipTypes = [
       hitPoints: 2,
       hits: 0
     }
+
   ];
