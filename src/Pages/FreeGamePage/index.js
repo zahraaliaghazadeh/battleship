@@ -1,16 +1,14 @@
-import Game from '../../Components/Game.js'
-import { generateFleet } from '../../Components/generateShips.js';
-import "./style.css"
+
 // import React from 'react'
 // import Board from '../../Components/Board'
 // import Square from '../../Square.jsx'
+// import "./style.css"
 // import {useSelector} from 'react-redux'
+import Board from '../../Components/Board.js'
+import Game from '../../Components/Game.js'
+
 function FreeGamePage() {
-    return <div>
-      <button  type="button" className="reset-freegame-button btn btn-danger">RESET</button>
-      <button onClick={() => generateFleet()} type="button" className="start-freegame-button btn btn-warning">START</button>
-      <Game />
-      </div>;
+    return <Game />;
   }
   
 export default FreeGamePage;
