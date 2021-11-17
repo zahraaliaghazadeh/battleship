@@ -1,0 +1,16 @@
+
+.reset-freegame-button{
+    align-self: center;  
+    margin: 10px;
+    margin-left: 45%; 
+    display: flex;
+    justify-content: center;
+    
+ 
+}
+
+
+.start-freegame-button{
+    display: flex;
+    justify-content: center;
+}
