@@ -1,4 +1,4 @@
-# Battleship
+# [Battleship](https://battleship2021.herokuapp.com/)
 > A game of battleship built with React, Redux, JavaScript, HTML, CSS
 
 ## Table of contents
