@@ -1,4 +1,92 @@
-test
+# Battleship
+> A game of battleship built with React, Redux, JavaScript, HTML, CSS
+
+## Table of contents
+* [General info](#general-info)
+* [Play Live](#play-live)
+* [Writeup](#writeup)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Setup](#setup)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
+
+## General info
+
+Battleship is a board game that pits 2 players against each other. 
+This repo contains the free game which is where the user playing on one board and the normal game which has two boards and the user plays against the AI.
+ 
+
+<br>
+
+## Play Live
+
+You can play the game at: [Link to the game](https://battleship2021.herokuapp.com/)
+
+## Writeup
+
+* What were some challenges you faced while making this app?
+Some React features were updated and had to look at the documentation for the changes, behavior of redux and states was challenging.
+* Given more time, what additional features, functional or design changes would you make?
+Use of local storage and use of dragging the ships on to the page by the user
+* What assumptions did you make while working on this assignment?
+TODO:
+* How long did this assignment take to complete?
+Three-four weeks
+
+
+## Screenshots
+<!-- ![Gif](./assets/gif1.gif) -->
+
+## Technologies
+* HTML5
+* CSS3
+* React
+* React redux
+* JavaScript
+* Bootstrap
+
+## Setup
+If you dont have an IDE on your computer, you can install [Visual Code IDE](https://code.visualstudio.com/download). Then you will download the code or clone the repository.
+Then you open terminal in that folder and type the command `npm install` , this will install all the dependencies in the package.json file, such as bootstrap, react, redux, react-router-dom, etc. After the installation is finished, you can use the command `npm start` to start the react server, this will open the app in your browser.
+
+
+
+## Features
+List of features ready and TODOs for future development
+* Free Game
+* Home
+* Rules
+
+
+To-do list:
+* Normal game
+* placing ships
+
+
+## Status
+Project is: _in progress_
+
+## Inspiration
+Project 2, practicing the use of redux
+
+## Contact
+<!-- <img src="./assets/pic1.png" width="80px"> <br> -->
+Yalda Ali Aghazadeh : Front End Developer/ Designer
+[Github](https://github.com/zahraaliaghazadeh) ,
+[LinkedIn](www.linkedin.com/in/zahraaliaghazadeh)
+
+Deborah Hunt: Front End Developer 
+[Github](https://github.com/Dhunt5)
+
+
+
+
+<hr>
+Below is the default information about React app.
+<hr>
 
 # Getting Started with Create React App
 
