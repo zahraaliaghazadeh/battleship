@@ -1,8 +1,8 @@
 import React from 'react'
-import LandingPage from "./Pages/LandingPage";
-import FreeGamePage from "./Pages/FreeGamePage";
-import NormalGamePage from "./Pages/NormalGamePage";
-import RulesPage from "./Pages/RulesPage";
+import LandingPage from "./Pages/LandingPage/script";
+import FreeGamePage from "./Pages/FreeGamePage/script";
+import NormalGamePage from "./Pages/NormalGamePage/script";
+import RulesPage from "./Pages/RulesPage/script";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 // BETWEEN HERE AND THE } AFTER ROUTER, I COMMENTED OUT TO HELP ME GET THE GAMEBOARD
@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 
 
 // // importing components
-import Nav from "./Components/Nav"
+import Nav from "./Components/Nav/script"
 
 
 // // the main css file
