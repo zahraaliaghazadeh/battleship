@@ -22,5 +22,15 @@ export default function gameReducer(state = defaultState, action) {
         }
         return [...state];
     }
+
+
+    if (action.type === 'RESET' || action.type === 'RESET_GAMEBOARD_ONLY') {
+        for (let i = 0; i < state.length; i++) {
+            for (let j = 0; j < state.length; j++){
+                state[i][j] = '';
+            }
+        }
+        return [...state];
+    }
     return state;
 }

@@ -1,17 +1,41 @@
 
-// import React from 'react'
-// import Board from '../../Components/Board'
-// import Square from '../../Square.jsx'
-// import "./style.css"
-// import {useSelector} from 'react-redux'
+import React from 'react'
 import Board from '../../Components/Board/Board'
 import Game from '../../Components/Game.js'
+import "./style.css"
 
-function FreeGamePage() {
-    return <Game />;
+// import Board from '../../Components/Board'
+// import Square from '../../Square.jsx'
+// import {useSelector} from 'react-redux'
+
+export default function FreeGamePage() {
+    return (
+    <div>
+      <button onClick={()=> generateShips()} type="button" className="btn btn-warning start-btn">START</button>
+      <button onClick={()=> resetBoard()} type="button" className="btn btn-danger reset-btn">RESET</button>
+
+      <Game />
+
+    </div>
+    
+    )}
+
+  function generateShips(){
+    const [x,y] = generateRandomCoordinates()
+    return null
+  }
+
+  function resetBoard(){
+    return null
+  }
+
+  // This function generates a random coordinate for ship
+  function generateRandomCoordinates(){
+    let x = Math.floor(Math.random(10))
+    let y = Math.floor(Math.random(10))
+    return [x,y]
   }
   
-export default FreeGamePage;
 //     const boardState = useSelector((state) => state.game)
 //     const board = getBoard()
 //     const square = document.getElementsByClassName('Square')
