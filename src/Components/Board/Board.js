@@ -23,7 +23,7 @@ export default function Board(props) {
             <div id="board" className="center">
                 {boardComponent}
             </div>
-            <ResetButton text="Reset"/>
+            <ResetButton text="Reset" className="main-reset-btn"/>
         </div>
 
     )
