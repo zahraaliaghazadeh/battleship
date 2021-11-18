@@ -10,14 +10,18 @@
       position:relative;
       top: 30%;
       left:40%;
+
   } 
 
 
   .welcome-message{
       margin-left: 20px;
       color: white;
+  }      
+  
+  
+  .btn-link{
+    text-decoration: none;
   }
 
-.button-direct{
-    text-decoration: None;
-}
+
