@@ -1,8 +1,10 @@
 
 import React from 'react'
-import Board from '../../Components/Board/Board'
+// import Board from '../../Components/Board/Board'
 import Game from '../../Components/Game.js'
 import "./style.css"
+// import generateFleet from '../../Components/generateShips'
+import StartButton from '../../Components/StartButton/StartButton.js'
 
 // import Board from '../../Components/Board'
 // import Square from '../../Square.jsx'
@@ -11,8 +13,10 @@ import "./style.css"
 export default function FreeGamePage() {
     return (
     <div>
-      <button onClick={()=> generateShips()} type="button" className="btn btn-warning start-btn">START</button>
-      <button onClick={()=> resetBoard()} type="button" className="btn btn-danger reset-btn">RESET</button>
+      
+      <StartButton/>
+      {/* <button onClick={()=> generateFleet()} type="button" className="btn btn-warning start-btn">START</button> */}
+      {/* <button type="button" className="btn btn-danger reset-btn">RESET</button> */}
 
       <Game />
 
@@ -20,21 +24,21 @@ export default function FreeGamePage() {
     
     )}
 
-  function generateShips(){
-    const [x,y] = generateRandomCoordinates()
-    return null
-  }
+  // function generateShips(){
+  //   const [x,y] = generateRandomCoordinates()
+  //   return null
+  // }
 
-  function resetBoard(){
-    return null
-  }
+  // function resetBoard(){
+  //   return null
+  // }
 
-  // This function generates a random coordinate for ship
-  function generateRandomCoordinates(){
-    let x = Math.floor(Math.random(10))
-    let y = Math.floor(Math.random(10))
-    return [x,y]
-  }
+  // // This function generates a random coordinate for ship
+  // function generateRandomCoordinates(){
+  //   let x = Math.floor(Math.random(10))
+  //   let y = Math.floor(Math.random(10))
+  //   return [x,y]
+  // }
   
 //     const boardState = useSelector((state) => state.game)
 //     const board = getBoard()

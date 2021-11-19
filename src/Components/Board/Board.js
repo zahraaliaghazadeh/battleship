@@ -2,7 +2,7 @@ import React from "react";
 import Square from "../Square/Square";
 import { useSelector } from 'react-redux';
 import "./Board.css";
-import ResetButton from "../ResetButton/ResetGameBoard"
+// import ResetButton from "../ResetButton/ResetGameBoard"
 
 export default function Board(props) {
     const boardState = useSelector((state) => state.game)
@@ -23,7 +23,7 @@ export default function Board(props) {
             <div id="board" className="center">
                 {boardComponent}
             </div>
-            <ResetButton text="Reset" className="main-reset-btn"/>
+            {/* <ResetButton text="Reset" className="main-reset-btn"/> */}
         </div>
 
     )
