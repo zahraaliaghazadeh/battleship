@@ -3,18 +3,18 @@ import { useDispatch } from 'react-redux';
 import "./style.css"
 
 
-export default function ResetButton(props) {
+export default function StartButton(props) {
     const { text } = props;
 
     const dispatch = useDispatch();
 
     return (
-        <button className="main-reset-btn" onClick={
+        <button className="main-start-btn btn btn-warning start-btn" onClick={
             () => dispatch({
-                type: "RESET",
+                type: "START",
             })
-
         }>
+            Start/Restart
             {text}
         </button>
     )
