@@ -43,8 +43,8 @@ export default function gameReducer(state = defaultState, action) {
         //     state[action.x][action.y] = 'lightBlueSquare';
         // } 
 
+        let shipSquareCounter = 0;
 
-        // TODO: Ask for help
         for (let k = 0; k < 10; k++) {
             for (let l = 0; l < 10; l++) {
                 // console.log(fleetArr[k][l])
@@ -54,17 +54,21 @@ export default function gameReducer(state = defaultState, action) {
                         || (fleetArr[action.x][action.y] === 300)
                         || (fleetArr[action.x][action.y] === 400)
                         || (fleetArr[action.x][action.y] === 500))) {
-
+                    shipSquareCounter ++;
                     state[action.x][action.y] = 'lightGreenSquare';
-                    console.log("ship square was hit")
+                    // console.log("ship square was hit")
                 } 
-                else if (value === 'lightBlueSquare' && fleetArr[k][l] === null) {
+                else if (value === 'lightBlueSquare' && fleetArr[action.x][action.y] === null) {
 
                     state[action.x][action.y] = 'darkBlueSquare';
                     // console.log("this was a miss")
-                }
+                } 
+
+                console.log("the number of hit ship squares is: " ,shipSquareCounter)
+               
             }
         }
+
 
         return [...state];
     }

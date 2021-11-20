@@ -4,6 +4,12 @@
     width: 40;
     margin: 2px;
     outline: 2px solid black;
+    transition: transform .2s; 
+}
+
+
+.square:hover{
+    transform: scale(1.2); 
 }
 
 /* if a ship square is hit */
