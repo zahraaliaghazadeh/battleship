@@ -24,34 +24,38 @@ export default function gameReducer(state = defaultState, action) {
         //     state[action.x][action.y] = 'lightBlueSquare';
         // } 
 
-        let shipSquareCounter = 0;
+        // let shipSquareCounter = 0;
+        // let gameOver = checkAllSunk()
+        // while(gameOver != true){
 
-        for (let k = 0; k < 10; k++) {
-            for (let l = 0; l < 10; l++) {
-                // console.log(fleetArr[k][l])
-                if ((value === 'lightBlueSquare') &&
-                    ((fleetArr[action.x][action.y] === 100)
-                        || (fleetArr[action.x][action.y] === 200)
-                        || (fleetArr[action.x][action.y] === 300)
-                        || (fleetArr[action.x][action.y] === 400)
-                        || (fleetArr[action.x][action.y] === 500))) {
-                    shipSquareCounter ++;
-                    state[action.x][action.y] = 'lightGreenSquare';
-                    // console.log("ship square was hit")
-                } 
-                else if (value === 'lightBlueSquare' && fleetArr[action.x][action.y] === null) {
 
-                    state[action.x][action.y] = 'darkBlueSquare';
-                    // console.log("this was a miss")
-                } 
+            for (let k = 0; k < 10; k++) {
+                for (let l = 0; l < 10; l++) {
+                    // console.log(fleetArr[k][l])
+                    if ((value === 'lightBlueSquare') &&
+                        ((fleetArr[action.x][action.y] === 100)
+                            || (fleetArr[action.x][action.y] === 200)
+                            || (fleetArr[action.x][action.y] === 300)
+                            || (fleetArr[action.x][action.y] === 400)
+                            || (fleetArr[action.x][action.y] === 500))) {
+                        // shipSquareCounter ++;
+                        state[action.x][action.y] = 'lightGreenSquare';
+                        // console.log("ship square was hit")
+                    }
+                    else if (value === 'lightBlueSquare' && fleetArr[action.x][action.y] === null) {
 
-                console.log("the number of hit ship squares is: " ,shipSquareCounter)
-               
+                        state[action.x][action.y] = 'darkBlueSquare';
+                        // console.log("this was a miss")
+                    }
+
+                    // console.log("the number of hit ship squares is: ", shipSquareCounter)
+
+                }
             }
-        }
 
-
-        return [...state];
+        // }
+            return [...state];
+        
     }
 
 
@@ -78,3 +82,19 @@ export default function gameReducer(state = defaultState, action) {
 
     return state;
 }
+
+
+// function checkAllSunk(board) {
+//     let sunkSqCounter = 0;
+//     for (let m = 0; m < 10; m++) {
+//         for (let n = 0; n < 10; n++) {
+//             if (board[m][n] === 'lightGreenSquare' || board[m][n] === 'darkGreenSquare') {
+//                 sunkSqCounter++;
+//             }
+//         }
+//     }
+//     if (sunkSqCounter >= 17) {
+//         console.log("game over")
+//         return true
+//     }
+// }

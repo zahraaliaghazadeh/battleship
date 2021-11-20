@@ -14,7 +14,7 @@
 
 /* if a ship square is hit */
 #lightGreenSquare {
-    background-color: lightgreen;
+    background-color: #a7c957;
     height: 40px;
     width: 40px;
 }
@@ -36,7 +36,7 @@
 }
 /* default square color */
 #lightBlueSquare {
-    background-color: lightBlue;
+    background-color: #90e0ef;
 
     height: 40px;
     width: 40px;
@@ -44,7 +44,7 @@
 
 /* if it is a miss */
 #darkBlueSquare {
-     background-color: darkBlue;
+     background-color: #0096c7;
 
     height: 40px;
     width: 40px;
