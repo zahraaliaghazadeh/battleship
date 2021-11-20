@@ -12,7 +12,7 @@ import StartButton from '../../Components/StartButton/StartButton.js'
 
 export default function FreeGamePage() {
     return (
-    <div>
+    <div className='FreeGamePage'>
       
       <StartButton/>
       {/* <button onClick={()=> generateFleet()} type="button" className="btn btn-warning start-btn">START</button> */}

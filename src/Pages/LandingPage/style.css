@@ -4,22 +4,29 @@
       background-size: cover;
       background-image: url('../../assets/images/battleship-landingpage2.jpeg');
       background-repeat: no-repeat;
+      font: "Fira Sans";
   }
 
   .landingPageButton{
+      text-decoration: none;
       position:relative;
       top: 30%;
       left:40%;
 
   } 
 
-
   .welcome-message{
       margin-left: 20px;
       color: white;
+      justify-content: center;
+      font-family: "Fira Sans";
   }      
   
-  
+  .container1{
+    justify-content: center;
+    font: "Fira Sans";
+  }
+
   .btn-link{
     text-decoration: none;
   }
