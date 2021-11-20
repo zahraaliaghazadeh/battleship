@@ -8,6 +8,15 @@
     
 }
 
+.FreeGamePage{
+    width: 100vw;
+    height:100vh;
+    background-size: cover;
+    background-image: url('../../assets/images/generic-background1.png');
+    background-repeat: no-repeat;
+    
+}
+
 .reset-btn{
     margin: 10px;
     align-self: center;
