@@ -1,21 +1,5 @@
 import generateFleet from '../Components/generateShips'
 
-
-// const defaultState = [
-//     ['', '', '', '', '', '', '', '', '', ''],
-//     ['', '', '', '', '', '', '', '', '', ''],
-//     ['', '', '', '', '', '', '', '', '', ''],
-//     ['', '', '', '', '', '', '', '', '', ''],
-//     ['', '', '', '', '', '', '', '', '', ''],
-//     ['', '', '', '', '', '', '', '', '', ''],
-//     ['', '', '', '', '', '', '', '', '', ''],
-//     ['', '', '', '', '', '', '', '', '', ''],
-//     ['', '', '', '', '', '', '', '', '', ''],
-//     ['', '', '', '', '', '', '', '', '', ''],
-
-// ];
-
-
 const defaultState = [
     ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
     ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
@@ -32,11 +16,8 @@ const defaultState = [
 let fleetArr = generateFleet()
 
 export default function gameReducer(state = defaultState, action) {
-    
     if (action.type === 'boardClick') {
         const value = state[action.x][action.y];
-     
-
         // if (value === 'lightBlueSquare') {
         //     state[action.x][action.y] = 'lightGreenSquare';
         // } else{
