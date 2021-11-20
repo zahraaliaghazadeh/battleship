@@ -1,4 +1,5 @@
-import generateFleet from '../Components/generateShips'
+import generateFleet from '../Components/generateShips';
+import Ships from './Ships';
 
 
 // const defaultState = [
@@ -53,7 +54,9 @@ export default function gameReducer(state = defaultState, action) {
                         || (fleetArr[action.x][action.y] === 200)
                         || (fleetArr[action.x][action.y] === 300)
                         || (fleetArr[action.x][action.y] === 400)
-                        || (fleetArr[action.x][action.y] === 500))) {
+                        || (fleetArr[action.x][action.y] === 500))),
+                        
+                         {
 
                     state[action.x][action.y] = 'lightGreenSquare';
                     console.log("ship square was hit")
