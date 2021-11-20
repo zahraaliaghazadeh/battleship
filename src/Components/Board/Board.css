@@ -5,8 +5,9 @@
 }
 
 .center {
-    display: flex;
-    justify-content: center;
+    /* display: center; */
+    flex-wrap: wrap;
+    /* justify-content: center; */
 }
 
 

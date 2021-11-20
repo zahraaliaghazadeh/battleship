@@ -6,8 +6,15 @@
     margin-right: 10px;
 }
 
-.nav-item{
+.nav-item a:active{
+    color: yellow;
+    /* margin-left: 20px; */
+    transition-duration: 0.2s;
+        
+}
+
+.nav-item:hover{
+    background-color: rgb(14, 14, 157);
     margin-left: 20px;
-    font: "Fira Sans";
-    
+        
 }
