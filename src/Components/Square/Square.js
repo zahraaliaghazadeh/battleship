@@ -20,7 +20,7 @@ export default function Square(props) {
 
 
 
-console.log(color)
+// console.log(color)
     return (
     <div className= "square" onClick={() => dispatch(
         {
