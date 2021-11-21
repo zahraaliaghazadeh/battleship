@@ -8,6 +8,18 @@
 
 .nav-item{
     margin-left: 20px;
-    font: "Fira Sans";
-    
+}
+
+.nav-item a:active{
+    color: yellow;
+    /* margin-left: 20px; */
+    transition-duration: 0.2s;
+
+}
+
+.nav-item:hover{
+    background-color: #3c096c;
+    margin-left: 20px;
+    border-radius: 10px;
+
 }

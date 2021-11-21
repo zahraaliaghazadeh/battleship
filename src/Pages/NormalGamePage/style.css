@@ -1,12 +1,92 @@
-.board-title{
-    margin-left: 40%;
+
+/* old changes for normal game page */
+
+
+.NormalGamePage{
+    background-image: url('../../assets/images/generic-background1.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
+    
 }
+
+/* .NormalGamePage{
+    background-color: gray;
+    height: 100vh;
+} */
+
+.board-title{
+    /* display: center; */
+    font-weight: 750;
+}
+
+
+  
+
+/* new changes for normal game page by debbie*/
+/* .title {
+    margin: 5%;
+    display: center;
+}
+
+.board-title{
+    display: center;
+    font-weight: 750;
+    margin-left: 25%;
+}
+
+
 
 .NormalGamePage{
     width: 100vw;
     height:100vh;
-    background-size: cover;
+    background-size: 100%;
     background-image: url('../../assets/images/generic-background1.png');
     background-repeat: no-repeat;
-    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    font: "Fira Sans";
 }
+
+
+div, span {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.reset-btn{
+    margin: 2% 2%;
+    align-self: right;
+    display: flex;
+    justify-content: auto;
+}
+
+.column {
+    float: left;
+    padding: 10%;
+    align-content: flex-end;
+   }
+
+  .left {
+    width: 70%;
+  }
+  .right {
+    width: 30%;
+  }
+
+
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+@media screen and (max-width: 600px) {
+.column {
+    width: 100%;
+}} */

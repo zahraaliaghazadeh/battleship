@@ -2,6 +2,7 @@
 import React from 'react'
 // import Board from '../../Components/Board/Board'
 import Game from '../../Components/Game.js'
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css"
 // import generateFleet from '../../Components/generateShips'
 import StartButton from '../../Components/StartButton/StartButton.js'
@@ -11,78 +12,37 @@ import StartButton from '../../Components/StartButton/StartButton.js'
 // import {useSelector} from 'react-redux'
 
 export default function FreeGamePage() {
-    return (
-    <div className='FreeGamePage'>
+
+  return (
+    <>
+      <div className='FreeGamePage'>
+        <div className="wrapper">
+          <div className="title">
+          <h3>Free Game Page</h3>
+          </div>
+          <div className="left reset-btn">
+
+            <StartButton/>
+          </div>
+              {/* <button onClick={()=> generateFleet()} type="button" className="btn btn-warning start-btn">START</button> */}
+              {/* <button type="button" className="btn btn-danger reset-btn">RESET</button> */}
+          <div className="right">
+            <Game />
+          </div>
+        </div>
+      </div>
+    </>
+  )}
+
+    // return (
+    // <div className='FreeGamePage'>
       
-      <StartButton/>
-      {/* <button onClick={()=> generateFleet()} type="button" className="btn btn-warning start-btn">START</button> */}
-      {/* <button type="button" className="btn btn-danger reset-btn">RESET</button> */}
+    //   <StartButton/>
+    //   {/* <button onClick={()=> generateFleet()} type="button" className="btn btn-warning start-btn">START</button> */}
+    //   {/* <button type="button" className="btn btn-danger reset-btn">RESET</button> */}
 
-      <Game />
+    //   <Game />
 
-    </div>
+    // </div>
     
-    )}
-
-  // function generateShips(){
-  //   const [x,y] = generateRandomCoordinates()
-  //   return null
-  // }
-
-  // function resetBoard(){
-  //   return null
-  // }
-
-  // // This function generates a random coordinate for ship
-  // function generateRandomCoordinates(){
-  //   let x = Math.floor(Math.random(10))
-  //   let y = Math.floor(Math.random(10))
-  //   return [x,y]
-  // }
-  
-//     const boardState = useSelector((state) => state.game)
-//     const board = getBoard()
-//     const square = document.getElementsByClassName('Square')
-//     const clickCount = useSelector((state) => state.clickCount)
-//     const boardComponent = [];
-
-
-    
-//     for (let i = 0; i < boardState.length; i++) {
-//         let row = boardState[i];
-//         for (let j = 0; j < row.length; j++) {
-//             boardComponent.push((<Square symbol={boardState[i][j]} x={i} y={j} />))
-//             }
-//         }
-
-//     function changeColor(event) {
-//         this.setState({blue: !this.state.green});
-//         }
-
-//     return (<div onClick={(count, dispatch) => {
-//         dispatch(
-//             {
-//                 type: 'boardClick',
-//                 x: props.x,
-//                 y: props.y,
-//             }
-//         );
-//         dispatch(
-//             {
-//                 type: 'updateCounter',
-//                 clicked: clicked
-//             }
-//         );
-//     }
-//     } class={`square ${backgroundColor}`} ></div >);
-// }
-
-//     return (
-//         <div className="FreeGamePage">
-//             <div className="title">
-//             <h3>Free Game Page</h3>
-//             </div>
-//             <Board />
-//             </div>
-//     )
-// }
+    // )}
