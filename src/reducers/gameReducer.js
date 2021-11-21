@@ -20,8 +20,8 @@ export default function gameReducer(state = defaultState, action) {
         const value = state[action.x][action.y];
 
         // let shipSquareCounter = 0;
-        let gameOver = checkAllSunk()
-        while(gameOver != true){
+        // let gameOver = checkAllSunk()
+        // while(gameOver != true){
 
             for (let k = 0; k < 10; k++) {
                 for (let l = 0; l < 10; l++) {
@@ -50,7 +50,7 @@ export default function gameReducer(state = defaultState, action) {
                 }
             }
 
-        }
+        // }
             return [...state];
         
     }
@@ -84,20 +84,20 @@ export default function gameReducer(state = defaultState, action) {
 }
 
 
-function checkAllSunk(Board) {
-    let sunkSqCounter = 0;
-    for (let m = 0; m < 10; m++) {
-        for (let n = 0; n < 10; n++) {
-            if (Board[m][n] === 'lightGreenSquare' || Board[m][n] === 'darkGreenSquare') {
-                sunkSqCounter++;
-            }
-        }
-    }
-    if (sunkSqCounter >= 17) {
-        console.log("game over")
-        return true
-    }
-}
+// function checkAllSunk(Board) {
+//     let sunkSqCounter = 0;
+//     for (let m = 0; m < 10; m++) {
+//         for (let n = 0; n < 10; n++) {
+//             if (Board[m][n] === 'lightGreenSquare' || Board[m][n] === 'darkGreenSquare') {
+//                 sunkSqCounter++;
+//             }
+//         }
+//     }
+//     if (sunkSqCounter >= 17) {
+//         console.log("game over")
+//         return true
+//     }
+// }
 
 // function changeBackground(e) {
 //     e.target.style.background = 'red';
