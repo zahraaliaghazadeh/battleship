@@ -1,54 +1,25 @@
-.title {
-    margin: 5%;
-}
-
-.reset-btn{
+.start-btn{
+    margin-left: 40%;
     /* margin: 10px; */
-    margin: 2% 2%;
-    align-self: flex-start;
+    align-self: center;
     display: flex;
     justify-content: center;
-    align-self: center;
- } 
 
-.boardGame {
-    display: flex;
-    align-self: center;
+    
 }
-
 
 .FreeGamePage{
     width: 100vw;
     height:100vh;
-    display: flex;
     background-size: cover;
     background-image: url('../../assets/images/generic-background1.png');
     background-repeat: no-repeat;
-    align-items: center;
+    
 }
 
-.wrapper {
-    float: left;
-    padding: 10%;
-   }
-  
-  .left {
-    width: 10%;
-  }
-  .right {
-    width: 80%;
-  }
- 
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  
-
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
-    }}
+.reset-btn{
+    margin: 10px;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+}

@@ -9,7 +9,7 @@ export default function Game() {
     // );
     // const squares = Array(100).fill(null);
     return (
-      <div className="boardGame">
+      <div>
         <Board />
         </div>
     )
