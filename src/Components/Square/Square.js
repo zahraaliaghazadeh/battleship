@@ -17,8 +17,7 @@ export default function Square(props) {
     const dispatch = useDispatch();
 
 
-
-
+   
 
 // console.log(color)
     return (
@@ -32,5 +31,6 @@ export default function Square(props) {
     )} id={color} ></div>);
     // )} id={color} className={squareColor}></div>);
 }
- 
+
+
 

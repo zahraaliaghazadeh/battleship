@@ -11,6 +11,6 @@ export default function Game() {
     return (
       <div>
         <Board />
-        </div>
+      </div>
     )
   }
