@@ -6,7 +6,9 @@ import "./Board.css";
 // import ResetButton from "../ResetButton/ResetGameBoard"
 
 export default function Board(props) {
-    const boardState = useSelector((state) => state.game)
+    const gameState = useSelector((state) => state.game)
+    const boardState = gameState.board
+    const shipsLeft = gameState.totalShips
     const boardComponent = [];
 
     let num = 0;
@@ -20,11 +22,20 @@ export default function Board(props) {
     }
     console.log(boardComponent)
     return (
-        <div>
-            <div id="board" className="center">
-                {boardComponent}
+
+        <div className="container">
+            <div className="row">
+
+                <div className="col-md-auto">
+                    <div>
+                        <div id="board" className="center">
+                            {boardComponent}
+                        </div>
+                        {shipsLeft <= 0 && <h2 className="game-over">Game Over</h2>}
+                        {/* <ResetButton text="Reset" className="main-reset-btn"/> */}
+                    </div>
+                </div>
             </div>
-            {/* <ResetButton text="Reset" className="main-reset-btn"/> */}
         </div>
 
     )

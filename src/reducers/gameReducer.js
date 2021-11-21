@@ -1,62 +1,93 @@
 import generateFleet from '../Components/generateShips';
-import Board from "../Components/Board/Board";
+import { Ships } from '../Components/Constants/Ships';
 
-const defaultState = [
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-];
+const INITIAL_SHIPS_NUM = 17;
+
+const defaultState = {
+    board: [
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
+    ],
+    ships: Ships.map((ship) => ({ id: ship.id, hitPoints: ship.hitPoints })),
+    totalShips: INITIAL_SHIPS_NUM
+}
 let fleetArr = generateFleet()
 
 export default function gameReducer(state = defaultState, action) {
     if (action.type === 'boardClick') {
-        const value = state[action.x][action.y];
+        const value = state.board[action.x][action.y];
 
-        // let shipSquareCounter = 0;
-        // let gameOver = checkAllSunk()
-        // while(gameOver != true){
-
-            for (let k = 0; k < 10; k++) {
-                for (let l = 0; l < 10; l++) {
-                    // console.log(fleetArr[k][l])
-                    if ((value === 'lightBlueSquare') &&
-                        ((fleetArr[action.x][action.y] === 100)
-                            || (fleetArr[action.x][action.y] === 200)
-                            || (fleetArr[action.x][action.y] === 300)
-                            || (fleetArr[action.x][action.y] === 400)
-                            || (fleetArr[action.x][action.y] === 500))) {
-                        // shipSquareCounter ++;
-                        state[action.x][action.y] = 'lightGreenSquare';
-                        // console.log("ship square was hit")
+        if ((value === 'lightBlueSquare') &&
+            ((fleetArr[action.x][action.y] === 1)
+                || (fleetArr[action.x][action.y] === 2)
+                || (fleetArr[action.x][action.y] === 3)
+                || (fleetArr[action.x][action.y] === 4)
+                || (fleetArr[action.x][action.y] === 5))) {
+            const id = fleetArr[action.x][action.y]
+            // shipSquareCounter ++;
+            state.board[action.x][action.y] = 'lightGreenSquare';
+            // console.log("ship square was hit")
+            // return {
+            //     board: [
+            // }
+            const currHp = state.ships[id - 1].hitPoints - 1
+            // const currShipSize = state.ships[id-1].size
+            console.log(`currHp=${currHp}`)
+            if (currHp === 0) {
+                // change all curr ships to darkBlue
+                for (let i = 0; i < 10; i++) {
+                    for (let j = 0; j < 10; j++) {
+                        if (fleetArr[i][j] === id) {
+                            state.board[i][j] = 'darkGreenSquare'
+                        }
                     }
-                    else if (value === 'lightBlueSquare' && fleetArr[action.x][action.y] === null) {
-
-                        state[action.x][action.y] = 'darkBlueSquare';
-                        // console.log("this was a miss")
-                    }
-                    // else if ((value != 'lightBlueSquare')){
-                    //     state[action.x][action.y] = 'redSquare';
-                    // }
-
-                    // console.log("the number of hit ship squares is: ", shipSquareCounter)
-
                 }
             }
 
-        // }
-            return [...state];
-        
+            const newShips = [
+                ...state.ships.slice(0, id - 1),
+                {
+                    ...state.ships[id - 1],
+                    hitPoints: currHp
+                },
+                ...state.ships.slice(id, state.ships.length)
+            ]
+            return {
+                board: [...state.board],
+                ships: [...newShips],
+                totalShips: state.totalShips - 1
+            }
+        }
+        else if (value === 'lightBlueSquare' && fleetArr[action.x][action.y] === null) {
+
+            state.board[action.x][action.y] = 'darkBlueSquare';
+            return {
+                board: [...state.board],
+                ...state,
+            }
+            // console.log("this was a miss")
+        }
+
+
+
+        // return [...state];
+        // return {
+        //     board: 
+        // };
+
+
     }
 
 
- 
+
 
 
     // if (action.type === 'RESET' || action.type === 'RESET_GAMEBOARD_ONLY') {
@@ -71,12 +102,16 @@ export default function gameReducer(state = defaultState, action) {
 
 
     if (action.type === 'START') {
-        for (let m = 0; m < state.length; m++) {
-            for (let n = 0; n < state.length; n++) {
-                state[m][n] = 'lightBlueSquare';
+        for (let m = 0; m < state.board.length; m++) {
+            for (let n = 0; n < state.board.length; n++) {
+                state.board[m][n] = 'lightBlueSquare';
             }
         }
-        return [...state];
+        return {
+            board: [...state.board],
+            ships: Ships.map((ship) => ({ id: ship.id, hitPoints: ship.hitPoints })),
+            totalShips: INITIAL_SHIPS_NUM
+        }
     }
 
 
@@ -97,16 +132,4 @@ export default function gameReducer(state = defaultState, action) {
 //         console.log("game over")
 //         return true
 //     }
-// }
-
-// function changeBackground(e) {
-//     e.target.style.background = 'red';
-  
-
-//   return (
-//     <div className="App">
-//       <button onMouseOver={changeBackground}>Hover over me!</button>
-//     </div>
-//   );
-
 // }

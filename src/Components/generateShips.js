@@ -23,7 +23,7 @@ const generateShipPositions = (ship, fleet) => {
     }
     let x = shipStartPosition[0];
     let y = shipStartPosition[1];
-    fleet[x][y] = ship.id * 100;
+    fleet[x][y] = ship.id;
     let directionOptions = ["LEFT", "RIGHT", "UP", "DOWN"];
     let directions = findDirectionOptions(ship.size, x, y, directionOptions, fleet);
     let choosenDirection = getRandomNumber(directions.length);
@@ -40,16 +40,16 @@ const placeShip = (ship, x, y, direction, fleet) => {
   let yCopy = y;
   while (ship.size > 0) {
     if (direction === "LEFT") {
-      fleet[x][yCopy] = ship.id * 100;
+      fleet[x][yCopy] = ship.id;
       yCopy--;
     } else if (direction === "RIGHT") {
-      fleet[x][yCopy] = ship.id * 100;
+      fleet[x][yCopy] = ship.id;
       yCopy++;
     } else if (direction === "UP") {
-      fleet[xCopy][y] = ship.id * 100;
+      fleet[xCopy][y] = ship.id;
       xCopy--;
     } else if (direction === "DOWN") {
-      fleet[xCopy][y] = ship.id * 100;
+      fleet[xCopy][y] = ship.id;
       xCopy++;
     }
     ship.size--;
