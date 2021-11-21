@@ -15,7 +15,7 @@ export const Ships = [
       count: 1,
       position: {},
       hitPoints: 4,
-      hits: 0
+      hits: 0 
     },
     {
       id: 3,
