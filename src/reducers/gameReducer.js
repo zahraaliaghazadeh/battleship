@@ -42,7 +42,7 @@ export default function gameReducer(state = defaultState, action) {
             // const currShipSize = state.ships[id-1].size
             console.log(`currHp=${currHp}`)
             if (currHp === 0) {
-                // change all curr ships to darkBlue
+                // change all curr ships to darkGreen
                 for (let i = 0; i < 10; i++) {
                     for (let j = 0; j < 10; j++) {
                         if (fleetArr[i][j] === id) {
