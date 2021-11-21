@@ -9,6 +9,7 @@ import "./style.css";
 export default function NormalGamePage() {
     return (
         <div className="NormalGamePage">
+
             <div class="container">
                 <div class="row">
                     <div class="col-12">

@@ -7,11 +7,21 @@ import "./style.css";
 export default function LandingPage() {
     return (
         <div className="LandingPage">
-            <div className="container1">
-                <h3 className="welcome-message">Welcome! Ready for the game? Start by choosing one below. We recommend that you read the rules first.</h3>
-                <button className="landingPageButton btn btn-warning"><a  className="btn-link" href="/free-game">Free Game</a></button>
-                <button className="landingPageButton btn btn-warning"><a  className="btn-link" href="/normal-game">Normal Game</a></button>
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-auto">
+
+                        <div className="container1">
+                            <h3 className="welcome-message">Welcome! Ready for the game? Start by choosing one below. We recommend that you read the rules first.</h3>
+                            <button className="landingPageButton btn btn-warning"><a className="btn-link" href="/free-game">Free Game</a></button>
+                            <button className="landingPageButton btn btn-warning"><a className="btn-link" href="/normal-game">Normal Game</a></button>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                </div>
             </div>
+
         </div>
 
 

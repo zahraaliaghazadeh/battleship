@@ -30,4 +30,6 @@ font: "Fira Sans";
 
 .btn-link{
 text-decoration: none;
+color: black;
+font-weight: 400;
 }
