@@ -15,7 +15,7 @@ export default function StartButton(props) {
                 type: "START",
             })
         }>
-            Start/Restart
+            Restart
             {text}
         </button>
     )
