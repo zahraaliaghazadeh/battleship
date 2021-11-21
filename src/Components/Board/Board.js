@@ -1,6 +1,7 @@
 import React from "react";
 import Square from "../Square/Square";
 import { useSelector } from 'react-redux';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./Board.css";
 // import ResetButton from "../ResetButton/ResetGameBoard"
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./style.css"
 
 

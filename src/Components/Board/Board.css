@@ -4,9 +4,10 @@
     grid-template-rows: repeat(10, 40px);
 }
 
-.center {
+ .center {
     display: flex;
     justify-content: center;
-}
+    /* flex-wrap: wrap; */
+} 
 
 

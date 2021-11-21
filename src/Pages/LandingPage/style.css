@@ -1,34 +1,35 @@
 .LandingPage{
-      width: 100vw;
-      height:100vh;
-      background-size: cover;
-      background-image: url('../../assets/images/battleship-landingpage2.jpeg');
-      background-repeat: no-repeat;
-      font: "Fira Sans";
-  }
+  width: 100vw;
+  height:100vh;
+  background-size: cover;
+  background-image: url('../../assets/images/battleship-landingpage2.jpeg');
+  background-repeat: no-repeat;
+  font: "Fira Sans";
+}
 
-  .landingPageButton{
-      text-decoration: none;
-      position:relative;
-      top: 30%;
-      left:40%;
+.landingPageButton{
+  text-decoration: none;
+  position:relative;
+  top: 30%;
+  left:40%;
+  margin: 10px;
 
-  } 
+} 
 
-  .welcome-message{
-      margin-left: 20px;
-      color: white;
-      justify-content: center;
-      font-family: "Fira Sans";
-  }      
-  
-  .container1{
-    justify-content: center;
-    font: "Fira Sans";
-  }
+.welcome-message{
+  margin-left: 20px;
+  color: white;
+  justify-content: center;
+  font-family: "Fira Sans";
+}      
 
-  .btn-link{
-    text-decoration: none;
-  }
+.container1{
+justify-content: center;
+font: "Fira Sans";
+}
 
-
+.btn-link{
+text-decoration: none;
+color: black;
+font-weight: 400;
+}
