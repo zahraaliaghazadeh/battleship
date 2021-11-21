@@ -1,6 +1,7 @@
-.main-start-btn{
-    align-self:center;
+.start-btn{
+    /* margin-left: 40%; */
+    margin: 10px;
+    align-self: center;
     display: flex;
     justify-content: center;
-    margin: 5%
 }

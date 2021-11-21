@@ -12,24 +12,16 @@ import StartButton from '../../Components/StartButton/StartButton.js'
 
 export default function FreeGamePage() {
     return (
-      <>
-        <div className='FreeGamePage'>
-          <div className="wrapper">
-            <div className="title">
-            <h3>Free Game Page</h3>
-            </div>
-            <div className="left reset-btn">
+    <div className='FreeGamePage'>
+      
+      <StartButton/>
+      {/* <button onClick={()=> generateFleet()} type="button" className="btn btn-warning start-btn">START</button> */}
+      {/* <button type="button" className="btn btn-danger reset-btn">RESET</button> */}
 
-              <StartButton/>
-            </div>
-                {/* <button onClick={()=> generateFleet()} type="button" className="btn btn-warning start-btn">START</button> */}
-                {/* <button type="button" className="btn btn-danger reset-btn">RESET</button> */}
-            <div className="right">
-              <Game />
-            </div>
-          </div>
-        </div>
-      </>
+      <Game />
+
+    </div>
+    
     )}
 
   // function generateShips(){
