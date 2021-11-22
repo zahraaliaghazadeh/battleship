@@ -9,10 +9,7 @@ export default function Board(props) {
     const gameState = useSelector((state) => state.game)
     const boardState = gameState.board
     const shipsLeft = gameState.totalShips
-    const lastShipHit = gameState.lastUserShipHit;
     const boardComponent = [];
-
-    console.log(lastShipHit);
 
     let num = 0;
 
@@ -23,7 +20,7 @@ export default function Board(props) {
             num = num + 1;
         }
     }
-    //console.log(boardComponent)
+    console.log(boardComponent)
     return (
 
         <div className="container">
@@ -34,7 +31,6 @@ export default function Board(props) {
                         <div id="board" className="center">
                             {boardComponent}
                         </div>
-                        {(lastShipHit.length !== 0) ? <div>{lastShipHit} was the last ship sunk!</div> : <div></div>}
                         {shipsLeft <= 0 && <h2 className="game-over">Game Over</h2>}
                         {/* <ResetButton text="Reset" className="main-reset-btn"/> */}
                     </div>

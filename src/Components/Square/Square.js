@@ -29,7 +29,7 @@ export default function Square(props) {
         x: props.x,
         y: props.y,
     }
-    )} id={color} >{((color === "lightGreenSquare") || (color === "darkGreenSquare")) ? "X" : ((color === "darkBlueSquare") ? "O" : "")}</div>);
+    )} id={color} ></div>);
     // )} id={color} className={squareColor}></div>);
 }
 
