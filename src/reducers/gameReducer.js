@@ -3,7 +3,7 @@ import { Ships } from '../Components/Constants/Ships';
 
 const INITIAL_SHIPS_NUM = 17;
 
-const defaultState = {
+const defaultState = window.localStorage.getItem('freeGame') ? JSON.parse(window.localStorage.getItem('freeGame')) : {
     board: [
         ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
         ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
@@ -32,15 +32,11 @@ export default function gameReducer(state = defaultState, action) {
                 || (fleetArr[action.x][action.y] === 4)
                 || (fleetArr[action.x][action.y] === 5))) {
             const id = fleetArr[action.x][action.y]
-            // shipSquareCounter ++;
             state.board[action.x][action.y] = 'lightGreenSquare';
-            // console.log("ship square was hit")
-            // return {
-            //     board: [
-            // }
+
             const currHp = state.ships[id - 1].hitPoints - 1
             // const currShipSize = state.ships[id-1].size
-            console.log(`currHp=${currHp}`)
+            // console.log(`currHp=${currHp}`)
             if (currHp === 0) {
                 // change all curr ships to darkGreen
                 for (let i = 0; i < 10; i++) {
@@ -60,44 +56,29 @@ export default function gameReducer(state = defaultState, action) {
                 },
                 ...state.ships.slice(id, state.ships.length)
             ]
-            return {
+            const newState = {
                 board: [...state.board],
                 ships: [...newShips],
                 totalShips: state.totalShips - 1
             }
+            storeToLocalStorage(newState);
+
+            return newState;
         }
         else if (value === 'lightBlueSquare' && fleetArr[action.x][action.y] === null) {
 
             state.board[action.x][action.y] = 'darkBlueSquare';
-            return {
+
+            const newState = {
                 board: [...state.board],
                 ...state,
             }
-            // console.log("this was a miss")
+
+            storeToLocalStorage(newState);
+            return newState;
         }
 
-
-
-        // return [...state];
-        // return {
-        //     board: 
-        // };
-
-
     }
-
-
-
-
-
-    // if (action.type === 'RESET' || action.type === 'RESET_GAMEBOARD_ONLY') {
-    //     for (let i = 0; i < state.length; i++) {
-    //         for (let j = 0; j < state.length; j++){
-    //             state[i][j] = '';
-    //         }
-    //     }
-    //     return [...state];
-    // }
 
 
 
@@ -107,29 +88,24 @@ export default function gameReducer(state = defaultState, action) {
                 state.board[m][n] = 'lightBlueSquare';
             }
         }
-        return {
+        const newState = {
             board: [...state.board],
             ships: Ships.map((ship) => ({ id: ship.id, hitPoints: ship.hitPoints })),
             totalShips: INITIAL_SHIPS_NUM
         }
+        clearLocalStorage();
+        return newState;
     }
 
 
     return state;
 }
 
+function storeToLocalStorage(state) {
+    window.localStorage.setItem('freeGame', JSON.stringify(state));
+}
 
-// function checkAllSunk(Board) {
-//     let sunkSqCounter = 0;
-//     for (let m = 0; m < 10; m++) {
-//         for (let n = 0; n < 10; n++) {
-//             if (Board[m][n] === 'lightGreenSquare' || Board[m][n] === 'darkGreenSquare') {
-//                 sunkSqCounter++;
-//             }
-//         }
-//     }
-//     if (sunkSqCounter >= 17) {
-//         console.log("game over")
-//         return true
-//     }
-// }
+function clearLocalStorage() {
+    window.localStorage.clear();
+}
+

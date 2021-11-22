@@ -12,7 +12,7 @@ export default function generateFleet(){
     for (let i = 0; i < Ships.length; i++) {
       fleet = generateShipPositions(Ships[i], fleet);
     }
-    console.log(fleet);
+    // console.log(fleet);
     return fleet;
 };
 
@@ -38,7 +38,8 @@ const positionIsFree = (fleet, x, y) => {
 const placeShip = (ship, x, y, direction, fleet) => {
   let xCopy = x;
   let yCopy = y;
-  while (ship.size > 0) {
+  let shipSize = ship.size;
+  while (shipSize > 0) {
     if (direction === "LEFT") {
       fleet[x][yCopy] = ship.id;
       yCopy--;
@@ -52,7 +53,7 @@ const placeShip = (ship, x, y, direction, fleet) => {
       fleet[xCopy][y] = ship.id;
       xCopy++;
     }
-    ship.size--;
+    shipSize--;
   }
   return fleet;
 }

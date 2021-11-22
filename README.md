@@ -17,6 +17,15 @@
 
 Battleship is a board game that pits 2 players against each other. 
 This repo contains the free game which is where the user playing on one board and the normal game which has two boards and the user plays against the AI.
+
+### Bonus point directions
+
+
+`You will notice that if you reset the browser mid-game, the entire game will reset.  The goal here is to use local storage (window.localStorage) to store the state of the game after every action.  You will still need to use React Context or Redux, so keep in mind the following concerns:
+You should check that localStorage has data when the app first opens
+You should update the localStorage data after each action
+localStorage should ONLY be accessed through your Redux or React Context code
+You should clear localStorage after the game is over (either through reset or a winner is decided)`
  
 
 <br>
@@ -27,18 +36,22 @@ You can play the game at: [Link to the game](https://battleship2021.herokuapp.co
 
 ## Writeup
 
+* Did you implement bonus point?
+Yes, Local Storage is implemented upon changing states.
 * What were some challenges you faced while making this app?
 Some React features were updated and had to look at the documentation for the changes, behavior of redux and states was challenging.
+Additionally, having the reducers set up for the free game and normal game was very challenging.
 * Given more time, what additional features, functional or design changes would you make?
-Use of local storage and use of dragging the ships on to the page by the user
+Use of dragging the ships on to the page by the user
 * What assumptions did you make while working on this assignment?
-TODO:
+The AI used for the normal game is currently just using random clicks on the board.
 * How long did this assignment take to complete?
 Three-four weeks
 
 
+
 ## Screenshots
-<!-- ![Gif](./assets/gif1.gif) -->
+![Gif](./src/assets/images/gif1.gif)
 
 ## Technologies
 * HTML5
@@ -47,6 +60,7 @@ Three-four weeks
 * React redux
 * JavaScript
 * Bootstrap
+* Local Storage
 
 ## Setup
 If you dont have an IDE on your computer, you can install [Visual Code IDE](https://code.visualstudio.com/download). Then you will download the code or clone the repository.
@@ -57,13 +71,14 @@ Then you open terminal in that folder and type the command `npm install` , this 
 ## Features
 List of features ready and TODOs for future development
 * Free Game
+* Normal Game
 * Home
 * Rules
 
 
 To-do list:
-* Normal game
-* placing ships
+* Drag and drop ships on the board
+* Make the AI of the Normal Game more efficient
 
 
 ## Status
@@ -74,11 +89,11 @@ Project 2, practicing the use of redux
 
 ## Contact
 <!-- <img src="./assets/pic1.png" width="80px"> <br> -->
-Yalda Ali Aghazadeh : Front End Developer/ Designer
+Yalda Ali Aghazadeh : Developer/ Designer
 [Github](https://github.com/zahraaliaghazadeh) ,
 [LinkedIn](www.linkedin.com/in/zahraaliaghazadeh)
 
-Deborah Hunt: Front End Developer 
+Deborah Hunt: Developer/ Designer
 [Github](https://github.com/Dhunt5)
 
 

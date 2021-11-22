@@ -3,7 +3,9 @@ import { Ships } from '../Components/Constants/Ships';
 
 const INITIAL_SHIPS_NUM = 17;
 
-const defaultState = {
+const INITIAL_SHIPS = Ships.map((ship) => ({ id: ship.id, hitPoints: ship.hitPoints }));
+
+const defaultState = window.localStorage.getItem('normalGame') ? JSON.parse(window.localStorage.getItem('normalGame')) : {
     user: {
         board: [
             ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
@@ -17,7 +19,7 @@ const defaultState = {
             ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
             ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
         ],
-        ships: Ships.map((ship) => ({ id: ship.id, hitPoints: ship.hitPoints })),
+        ships: [...INITIAL_SHIPS],
         totalShips: INITIAL_SHIPS_NUM
     },
     ai: {
@@ -33,87 +35,121 @@ const defaultState = {
             ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
             ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
         ],
-        ships: Ships.map((ship) => ({ id: ship.id, hitPoints: ship.hitPoints })),
-        totalShips: INITIAL_SHIPS_NUM
-
+        ships: [...INITIAL_SHIPS],
+        totalShips: INITIAL_SHIPS_NUM 
     }
-
 }
+let fleetArrUser = generateFleet()
+let fleetArrAi = generateFleet()
 
-
-function boardClickHandler(userState, aiState, x, y) {
-    const value = state.board[action.x][action.y];
-    if ((value === 'lightBlueSquare') &&
-        ((fleetArr[action.x][action.y] === 1)
-            || (fleetArr[action.x][action.y] === 2)
-            || (fleetArr[action.x][action.y] === 3)
-            || (fleetArr[action.x][action.y] === 4)
-            || (fleetArr[action.x][action.y] === 5))) {
-        const id = fleetArr[action.x][action.y]
-        // shipSquareCounter ++;
-        state.board[action.x][action.y] = 'lightGreenSquare';
-        // console.log("ship square was hit")
-        // return {
-        //     board: [
-        // }
-        const currHp = state.ships[id - 1].hitPoints - 1
-        // const currShipSize = state.ships[id-1].size
-        console.log(`currHp=${currHp}`)
-        if (currHp === 0) {
-            // change all curr ships to darkGreen
-            for (let i = 0; i < 10; i++) {
-                for (let j = 0; j < 10; j++) {
-                    if (fleetArr[i][j] === id) {
-                        state.board[i][j] = 'darkGreenSquare'
-                    }
-                }
-            }
-        }
-        const newShips = [
-            ...state.ships.slice(0, id - 1),
-            {
-                ...state.ships[id - 1],
-                hitPoints: currHp
-            },
-            ...state.ships.slice(id, state.ships.length)
-        ]
-        return {
-            board: [...state.board],
-            ships: [...newShips],
-            totalShips: state.totalShips - 1
-        }
-    }
-    else if (value === 'lightBlueSquare' && fleetArr[action.x][action.y] === null) {
-        state.board[action.x][action.y] = 'darkBlueSquare';
-        return {
-            board: [...state.board],
+export default function gameReducer(state = defaultState, action) {
+    if (action.type === 'aiClick') {
+        const newUserState = clickHandler(state.user, fleetArrUser, action.x, action.y);
+        const newState = {
             ...state,
+            user: newUserState
         }
+        storeToLocalStorage(newState);
+        return newState;
     }
+    if (action.type === 'boardClick') {
+        const newAiState = clickHandler(state.ai, fleetArrAi, action.x, action.y);
+        const newState = {
+            ...state,
+            ai: newAiState
+        }
+        storeToLocalStorage(newState);
+        return newState;
+
+    }
+
+
 
     if (action.type === 'START') {
-        for (let m = 0; m < state.board.length; m++) {
-            for (let n = 0; n < state.board.length; n++) {
-                state.board[m][n] = 'lightBlueSquare';
+        for (let m = 0; m < state.ai.board.length; m++) {
+            for (let n = 0; n < state.ai.board.length; n++) {
+                state.ai.board[m][n] = 'lightBlueSquare';
             }
         }
+        for (let m = 0; m < state.ai.board.length; m++) {
+            for (let n = 0; n < state.ai.board.length; n++) {
+                state.user.board[m][n] = 'lightBlueSquare';
+            }
+        }
+        clearLocalStorage();
         return {
-            board: [...state.board],
-            ships: Ships.map((ship) => ({ id: ship.id, hitPoints: ship.hitPoints })),
-            totalShips: INITIAL_SHIPS_NUM
+            user: {
+                board: [...state.user.board],
+                ships: [...INITIAL_SHIPS],
+                totalShips: INITIAL_SHIPS_NUM
+            },
+            ai: {
+                board: [...state.ai.board],
+                ships: [...INITIAL_SHIPS],
+                totalShips: INITIAL_SHIPS_NUM
+            }
         }
     }
+
+
     return state;
 }
 
-export default function normalGameReducer(state = defaultState, action) {
-    let fleetArr1 = generateFleet()
-    let fleetArr2 = generateFleet()
-    if (action.type === 'boardClick') {
-        main = boardClickHandler()
-        return (main)
-    }
-  
+
+function clickHandler(playerState, fleet, x, y) {
+    const value = playerState.board[x][y];
+
+        if ((value === 'lightBlueSquare') &&
+            ((fleet[x][y] === 1)
+                || (fleet[x][y] === 2)
+                || (fleet[x][y] === 3)
+                || (fleet[x][y] === 4)
+                || (fleet[x][y] === 5))) {
+            const id = fleet[x][y]
+            playerState.board[x][y] = 'lightGreenSquare';
+            const currHp = playerState.ships[id - 1].hitPoints - 1
+            // const currShipSize = state.ships[id-1].size
+            // console.log(`currHp=${currHp}`)
+            if (currHp === 0) {
+                // change all curr ships to darkGreen
+                for (let i = 0; i < 10; i++) {
+                    for (let j = 0; j < 10; j++) {
+                        if (fleet[i][j] === id) {
+                            playerState.board[i][j] = 'darkGreenSquare';
+                        }
+                    }
+                }
+            }
+
+            const newShips = [
+                ...playerState.ships.slice(0, id - 1),
+                {
+                    ...playerState.ships[id - 1],
+                    hitPoints: currHp
+                },
+                ...playerState.ships.slice(id, playerState.ships.length)
+            ]
+            return {
+                board: [...playerState.board],
+                ships: [...newShips],
+                totalShips: playerState.totalShips - 1
+            }
+        }
+        else if (value === 'lightBlueSquare' && fleet[x][y] === null) {
+            playerState.board[x][y] = 'darkBlueSquare';
+            return {
+                ...playerState,
+                board: [...playerState.board],
+            }
+        }
+        return playerState
 
 }
 
+function storeToLocalStorage(state) {
+    window.localStorage.setItem('normalGame', JSON.stringify(state));
+}
+
+function clearLocalStorage() {
+    window.localStorage.clear();
+}
