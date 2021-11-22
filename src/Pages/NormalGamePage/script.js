@@ -49,7 +49,7 @@ export default function NormalGamePage() {
                 <div className="row">
                     <div className="col-12">
                         <div className="title">
-                            <h3>Normal Game Page</h3>
+                            <h3>Normal Game</h3>
                         </div>
                         <div className="reset-btn">
                             <StartButton />

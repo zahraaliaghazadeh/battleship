@@ -31,7 +31,7 @@ export default function FreeGamePage() {
           <div className="row">
             <div className="col-md-auto">
               <div className="title">
-                <h3>Free Game Page</h3>
+                <h3>Free Game</h3>
               </div>
               <div className="start-button">
                 <StartButton />
