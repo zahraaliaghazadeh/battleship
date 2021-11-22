@@ -16,24 +16,9 @@ const defaultState = {
         ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
         ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
     ],
-    computerBoard: [
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-        ['lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare', 'lightBlueSquare'],
-    ],
-    ships: Ships.map((ship) => ({ id: ship.id, hitPoints: ship.hitPoints, name: ship.name })),
-    totalShips: INITIAL_SHIPS_NUM,
-    lastUserShipHit: "",
-    lastComputerShipHit: "",
+    ships: Ships.map((ship) => ({ id: ship.id, hitPoints: ship.hitPoints })),
+    totalShips: INITIAL_SHIPS_NUM
 }
-
 let fleetArr = generateFleet()
 
 export default function gameReducer(state = defaultState, action) {
@@ -57,13 +42,11 @@ export default function gameReducer(state = defaultState, action) {
             // const currShipSize = state.ships[id-1].size
             console.log(`currHp=${currHp}`)
             if (currHp === 0) {
-                state.lastUserShipHit = state.ships[id - 1].name;
-                console.log(state.lastUserShipHit);
                 // change all curr ships to darkBlue
                 for (let i = 0; i < 10; i++) {
                     for (let j = 0; j < 10; j++) {
                         if (fleetArr[i][j] === id) {
-                            state.board[i][j] = 'darkGreenSquare';
+                            state.board[i][j] = 'darkGreenSquare'
                         }
                     }
                 }
@@ -77,12 +60,11 @@ export default function gameReducer(state = defaultState, action) {
                 },
                 ...state.ships.slice(id, state.ships.length)
             ]
-            return {...state, 
+            return {
                 board: [...state.board],
                 ships: [...newShips],
-                totalShips: state.totalShips - 1,
-                lastUserShipHit: state.lastUserShipHit,
-            };
+                totalShips: state.totalShips - 1
+            }
         }
         else if (value === 'lightBlueSquare' && fleetArr[action.x][action.y] === null) {
 
