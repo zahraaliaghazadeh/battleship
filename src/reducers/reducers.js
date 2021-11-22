@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
-import clickReducer from './clickReducer';
+import normalGameReducer from './normalGameReducer';
 import gameReducer from "./gameReducer";
 
 export default combineReducers({
     game: gameReducer,
-    clickCount: clickReducer,
+    normalGameReducer: normalGameReducer,
+
 })
