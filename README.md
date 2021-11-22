@@ -37,7 +37,7 @@ You can play the game at: [Link to the game](https://battleship2021.herokuapp.co
 ## Writeup
 
 * Did you implement bonus point?
-Yes, Local Storage is implemented upon changing states.
+Yes, Local Storage is implemented when there is a change in states.
 * What were some challenges you faced while making this app?
 Some React features were updated and had to look at the documentation for the changes, behavior of redux and states was challenging.
 Additionally, having the reducers set up for the free game and normal game was very challenging.
@@ -51,7 +51,10 @@ Three-four weeks
 
 
 ## Screenshots
-![Gif](./src/assets/images/gif1.gif)
+Here, you see an example of the Normal Game. Notice that the game doesnt reset when page refreshes.<br>
+![Gif](./src/assets/images/gif1.gif) <br>
+Below, you see an example of the Free Game. <br>
+![Gif](./src/assets/images/gif2.gif) <br>
 
 ## Technologies
 * HTML5
