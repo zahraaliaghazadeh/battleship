@@ -72,11 +72,11 @@ Then you open terminal in that folder and type the command `npm install` , this 
 
 
 ## Features
-List of features ready and TODOs for future development
-* Free Game
-* Normal Game
-* Home
-* Rules
+* Free Game is a battleship game with only one board
+* Normal Game is a battleship game for user against AI
+* Home Contains a welcome message and two buttons directing each user to each game
+* Rules has a brief review of the rules for this game
+* Local Storage is implemented and the react app icon is changed :) 
 
 
 To-do list:
@@ -85,10 +85,10 @@ To-do list:
 
 
 ## Status
-Project is: _in progress_
+Project is: _finished_
 
 ## Inspiration
-Project 2, practicing the use of redux
+Project 2, CS5610 
 
 ## Contact
 <!-- <img src="./assets/pic1.png" width="80px"> <br> -->
