@@ -19,6 +19,7 @@ export default function Nav() {
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         {/* <a className="navbar-brand logo" href="#">Battleship</a> */}
+        <div className="logo"><img src="/favicon.ico"></img></div>
         <div className="navbar-brand logo">Battleship</div>
         <button
           onClick={() => toggleHamburger()}
