@@ -18,15 +18,6 @@
 
 Battleship is a board game that pits 2 players against each other. 
 This repo contains the free game which is where the user playing on one board and the normal game which has two boards and the user plays against the AI.
-
-### Bonus point directions
-
-
-`You will notice that if you reset the browser mid-game, the entire game will reset.  The goal here is to use local storage (window.localStorage) to store the state of the game after every action.  You will still need to use React Context or Redux, so keep in mind the following concerns:
-You should check that localStorage has data when the app first opens
-You should update the localStorage data after each action
-localStorage should ONLY be accessed through your Redux or React Context code
-You should clear localStorage after the game is over (either through reset or a winner is decided)`
  
 
 <br>
@@ -38,9 +29,9 @@ You can play the game at: [Link to the game](https://battleship2021.herokuapp.co
 ## Writeup
 
 * Did you implement bonus point?
-Yes, Local Storage is implemented when there is a change in states.
+Yes, Local Storage is implemented when there is a change in state.
 * What were some challenges you faced while making this app?
-Some React features were updated and had to look at the documentation for the changes, behavior of redux and states was challenging.
+Some React features were updated and had to look at the documentation for the changes, behavior of redux and states was challenging. Placing ships on the board was one of the very challenging parts. Additionally, having the reducers set for the free game and normal game was very challenging.
 Additionally, having the reducers set up for the free game and normal game was very challenging.
 * Given more time, what additional features, functional or design changes would you make?
 Use of dragging the ships on to the page by the user
